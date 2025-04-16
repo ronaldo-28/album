@@ -1,0 +1,359 @@
+/* index.css */
+
+/* ----------------------------------------- */
+/* THEME COLOR VARIABLES                     */
+/* ----------------------------------------- */
+
+/* Define CSS variables for colors in the default (light) theme */
+:root {
+  /* Base colors */
+  --bg-color: #f2f2f2; /* Page background */
+  --text-color: #333; /* Default text color */
+
+  /* Navbar specific colors */
+  --navbar-bg: #000000; /* Navbar background */
+  --navbar-brand-bg: #fd0102; /* Background for the first part of the brand */
+  --navbar-brand-text: white; /* Text color for the first part of the brand */
+  --navbar-brand-half-bg: #000000; /* Background for the second part of the brand */
+  --navbar-brand-half-text: #fd0102; /* Text color for the second part of the brand */
+  --navbar-button-text: #fd0102; /* Text color for the navigation button */
+  --navbar-button-border: #fd0102; /* Border color for the navigation button */
+  --navbar-button-hover-bg: #fd0102; /* Background color on hover for the navigation button */
+  --navbar-button-hover-text: white; /* Text color on hover for the navigation button */
+
+  /* Theme Toggle Button colors */
+  --theme-toggle-outline: #bbb; /* Border/outline color for the toggle button */
+  --theme-toggle-text: #555; /* Text color for the toggle button */
+  --theme-toggle-hover-bg: #eee; /* Background color on hover for the toggle button */
+
+  /* Album List Item ('List' component) colors */
+  --list-bg: #478ac9; /* Background for album items */
+  --list-text: white; /* Text color inside album items */
+  --list-button-update-bg: black; /* Background for the 'Update' button */
+  --list-button-update-text: white; /* Text color for the 'Update' button */
+  --list-button-update-hover-bg: #333; /* Background on hover for the 'Update' button */
+  --list-button-delete-bg: #fd0102; /* Background for the 'Delete' button */
+  --list-button-delete-text: white; /* Text color for the 'Delete' button */
+  --list-button-delete-hover-bg: #c80002; /* Background on hover for the 'Delete' button */
+
+  /* Form ('AddAlbum', 'UpdateAlbum') colors */
+  --form-bg: #478ac9; /* Background for form containers */
+  --form-text: white; /* Text color inside forms (labels, etc.) */
+  --form-input-bg: white; /* Background for input fields */
+  --form-input-text: #333; /* Text color inside input fields */
+  --form-button-bg: #28a745; /* Background for form submit buttons */
+  --form-button-text: white; /* Text color for form submit buttons */
+  --form-button-hover-bg: #218838; /* Background on hover for form submit buttons */
+  --form-heading-text: #333; /* Text color for form page headings (like 'Add New Album') */
+}
+
+/* Define overrides for the dark theme when body has 'dark' class */
+body.dark {
+  /* Base colors */
+  --bg-color: #212529;
+  --text-color: #f8f9fa;
+
+  /* Navbar specific colors */
+  --navbar-bg: #1a1a1a;
+  --navbar-brand-bg: #e60000;
+  --navbar-brand-text: #f8f9fa;
+  --navbar-brand-half-bg: #1a1a1a;
+  --navbar-brand-half-text: #e60000;
+  --navbar-button-text: #e60000;
+  --navbar-button-border: #e60000;
+  --navbar-button-hover-bg: #e60000;
+  --navbar-button-hover-text: #f8f9fa;
+
+  /* Theme Toggle Button colors */
+  --theme-toggle-outline: #555;
+  --theme-toggle-text: #aaa;
+  --theme-toggle-hover-bg: #333;
+
+  /* Album List Item colors */
+  --list-bg: #3a70a1;
+  --list-text: #f8f9fa;
+  --list-button-update-bg: #555;
+  --list-button-update-text: #f8f9fa;
+  --list-button-update-hover-bg: #777;
+  --list-button-delete-bg: #e60000;
+  --list-button-delete-text: #f8f9fa;
+  --list-button-delete-hover-bg: #ff1a1a;
+
+  /* Form colors */
+  --form-bg: #3a70a1;
+  --form-text: #f8f9fa;
+  --form-input-bg: #495057;
+  --form-input-text: #f8f9fa;
+  --form-button-bg: #1e7e34;
+  --form-button-text: #f8f9fa;
+  --form-button-hover-bg: #155724;
+  --form-heading-text: #f8f9fa; /* Light text for heading in dark mode */
+}
+
+/* ----------------------------------------- */
+/* GLOBAL STYLES & RESETS                    */
+/* ----------------------------------------- */
+
+/* Universal selector (*) applies these styles to ALL elements */
+* {
+  margin: 0px; /* Remove default browser margins */
+  padding: 0px; /* Remove default browser padding */
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+  font-family: Arial, Helvetica, sans-serif; /* Default font stack */
+}
+
+/* Styles applied to the <body> element */
+body {
+  width: 100%; /* Full viewport width */
+  min-height: 100vh; /* At least full viewport height */
+  background-color: var(--bg-color); /* Use theme variable for background */
+  color: var(--text-color); /* Use theme variable for default text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
+}
+
+/* Styles applied to anchor (<a>) tags */
+a {
+  color: unset; /* Inherit color from parent */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Styles applied to input fields */
+input {
+  outline: none; /* Remove default focus outline */
+  font-size: 18px; /* Base font size */
+  width: 100%; /* Full width of container */
+  background-color: var(--form-input-bg); /* Use theme variable */
+  color: var(--form-input-text); /* Use theme variable */
+  border: 1px solid var(--list-bg); /* Subtle border, color related to list background */
+  padding: 8px; /* Internal spacing */
+  border-radius: 4px; /* Rounded corners */
+}
+input:focus {
+  border-color: var(
+    --form-button-bg
+  ); /* Highlight focus using form button color */
+  /* Subtle focus glow using form button color with transparency */
+  box-shadow: 0 0 0 2px rgba(var(--form-button-bg), 0.25);
+}
+
+/* Styles applied to button elements */
+button {
+  outline: none; /* Remove default focus outline */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Indicate interactivity */
+  border-radius: 4px; /* Base rounded corners */
+  /* Base transitions for smooth hover effects */
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* ----------------------------------------- */
+/* NAVBAR COMPONENT                          */
+/* ----------------------------------------- */
+
+.navbar {
+  width: 100%;
+  padding: 15px 15px; /* Symmetrical padding */
+  background-color: var(--navbar-bg); /* Use theme variable */
+  display: flex; /* Enable Flexbox */
+  justify-content: space-between; /* Space out logo, toggle, nav link */
+  align-items: center; /* Vertically align items */
+  position: fixed; /* Fix to viewport */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  z-index: 1000; /* Ensure it's above most other content */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Navbar Brand/Logo styling */
+.navbar h2 {
+  background-color: var(--navbar-brand-bg); /* Use theme variable */
+  width: fit-content; /* Size to content */
+  padding: 4px 6px;
+  color: var(--navbar-brand-text); /* Use theme variable */
+  border-radius: 3px;
+  cursor: default; /* Default cursor as it's likely not interactive */
+}
+.brand-first-half {
+  margin-right: 2px; /* Small space between brand parts */
+}
+.brand-last-half {
+  background-color: var(--navbar-brand-half-bg); /* Use theme variable */
+  color: var(--navbar-brand-half-text); /* Use theme variable */
+  padding: 0 4px;
+}
+
+/* Styles for the Navigation Link's Button (e.g., "Add Album" or "Home") */
+.navbar > a > button {
+  background-color: transparent; /* No background */
+  color: var(--navbar-button-text); /* Use theme variable */
+  border: 2px solid var(--navbar-button-border); /* Use theme variable */
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  /* Base transition inherited */
+}
+.navbar > a > button:hover {
+  background-color: var(--navbar-button-hover-bg); /* Use theme variable */
+  color: var(--navbar-button-hover-text); /* Use theme variable */
+}
+
+/* Styles for the centered theme toggle button */
+.theme-toggle-button-center {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  background-color: transparent; /* No background */
+  /* Use theme variables for border and text */
+  border: 1px solid var(--theme-toggle-outline);
+  color: var(--theme-toggle-text);
+  margin: 0 10px; /* Add horizontal margin for spacing */
+  /* Base transition inherited */
+}
+.theme-toggle-button-center:hover {
+  background-color: var(--theme-toggle-hover-bg); /* Use theme variable */
+}
+
+/* ----------------------------------------- */
+/* ALBUMS LIST COMPONENT                     */
+/* ----------------------------------------- */
+
+.albums-list {
+  width: 85%; /* Responsive width */
+  max-width: 1200px; /* Maximum width */
+  margin: auto; /* Center horizontally */
+  /* Top padding to clear the fixed navbar */
+  padding-top: 75px; /* Adjust value based on actual navbar height */
+  display: flex; /* Enable Flexbox */
+  flex-wrap: wrap; /* Allow items to wrap to next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Spacing between items */
+  padding-bottom: 30px; /* Space at the bottom */
+}
+
+/* ----------------------------------------- */
+/* LIST ITEM COMPONENT (SINGLE ALBUM)        */
+/* ----------------------------------------- */
+
+.list {
+  width: 100%; /* Full width on small screens */
+  max-width: 320px; /* Max width for larger screens */
+  min-height: 180px; /* Minimum height */
+  height: auto; /* Height based on content */
+  background-color: var(--list-bg); /* Use theme variable */
+  color: var(--list-text); /* Use theme variable */
+  padding: 15px; /* Internal spacing */
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Stack title and buttons vertically */
+  justify-content: space-between; /* Push title up, buttons down */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+/* Album Title */
+.list h3 {
+  text-align: center;
+  text-transform: capitalize; /* Capitalize first letter of words */
+  margin-bottom: 15px; /* Space below title */
+  font-size: 1.1rem; /* Title font size */
+  word-break: break-word; /* Prevent long titles from overflowing */
+}
+
+/* Container for Update/Delete buttons */
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space buttons apart */
+  gap: 10px; /* Space between buttons */
+}
+
+/* Update Button */
+.update-btn {
+  background-color: var(--list-button-update-bg); /* Use theme variable */
+  color: var(--list-button-update-text); /* Use theme variable */
+  padding: 10px 15px;
+  flex-grow: 1; /* Allow button to grow to fill space */
+  /* Base transitions and radius inherited */
+}
+.update-btn:hover {
+  background-color: var(--list-button-update-hover-bg); /* Use theme variable */
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: var(--list-button-delete-bg); /* Use theme variable */
+  color: var(--list-button-delete-text); /* Use theme variable */
+  padding: 10px 15px;
+  flex-grow: 1; /* Allow button to grow to fill space */
+  /* Base transitions and radius inherited */
+}
+.delete-btn:hover {
+  background-color: var(--list-button-delete-hover-bg); /* Use theme variable */
+  color: var(--list-button-delete-text); /* Keep text color same on hover */
+}
+
+/* ----------------------------------------- */
+/* FORM PAGES (AddAlbum, UpdateAlbum)        */
+/* ----------------------------------------- */
+
+/* Common container for the form page content area */
+.update-album,
+.addalbum-container {
+  width: 90%; /* Responsive width */
+  max-width: 450px; /* Max width for the form area */
+  margin: auto; /* Center horizontally */
+  /* Top padding to clear the fixed navbar */
+  padding-top: 85px; /* Adjust value based on actual navbar height */
+  padding-bottom: 30px; /* Space at the bottom */
+}
+
+/* Heading for the form pages (e.g., "Add New Album") */
+.form-heading {
+  text-align: center;
+  color: var(--form-heading-text); /* Use theme variable */
+  margin-bottom: 25px; /* Space below heading */
+  font-size: 1.8rem; /* Heading size */
+}
+
+/* The actual form container */
+.form-container,
+.addalbum-form {
+  background-color: var(--form-bg); /* Use theme variable */
+  padding: 25px; /* Internal spacing */
+  margin-top: 0; /* Remove top margin if heading is outside */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  color: var(--form-text); /* Use theme variable for labels etc. */
+}
+
+/* Container for each label-input pair */
+.inp-container {
+  margin-bottom: 20px; /* Space between input groups */
+}
+
+/* Label styling */
+.inp-container label {
+  display: block; /* Ensure label is on its own line */
+  margin-bottom: 8px; /* Space between label and input */
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--form-text); /* Use theme variable */
+}
+
+/* Form submit button styling */
+.form-container button,
+.addalbum-form button {
+  background-color: var(--form-button-bg); /* Use theme variable */
+  padding: 12px 20px; /* Button size */
+  color: var(--form-button-text); /* Use theme variable */
+  width: 100%; /* Full width button */
+  margin-top: 15px; /* Space above button */
+  font-size: 1.1rem; /* Text size */
+  border-radius: 4px;
+  /* Base transitions inherited */
+}
+.form-container button:hover,
+.addalbum-form button:hover {
+  background-color: var(--form-button-hover-bg); /* Use theme variable */
+}
