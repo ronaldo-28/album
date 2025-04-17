@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+**Explanation:**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- **`public/index.html`:** The single HTML page shell. React injects the application into the `<div id="root">`.
+- **`src/index.js`:** The starting point for the React app. It sets up the React root, imports the main `App` component, and wraps it with `BrowserRouter` to enable routing.
+- **`src/index.css`:** Contains all the CSS. It uses CSS variables for easy theming (light/dark modes defined here) and styles all components.
+- **`src/components/`:** Holds all the React components.
+  - **`App.js`:** The top-level component, acting as the brain. Manages the list of albums, the currently selected theme, handles API interactions (fetching, simulating CUD), and defines the routes using `react-router-dom`.
+  - **`Navbar.js`:** A reusable component for the top navigation bar, including the theme toggle button. Receives theme state and toggle function as props.
+  - **`AlbumsList.js`:** Displays the main view, rendering the Navbar and mapping over the albums data (received from `App`) to render individual `List` items.
+  - **`List.js`:** Represents a single album card, displaying its title and providing "Update" and "Delete" buttons. Calls functions passed down from `App` when buttons are clicked.
+  - **`AddAlbum.js`:** The form page for creating new albums. Manages local form state and calls a function from `App` to add the album to the main list.
+  - **`UpdateAlbum.js`:** The form page for editing existing albums. Receives the album-to-update from `App`, manages local form state, and calls a function from `App` to update the album in the main list.
 
-## Available Scripts
+## Setup and Running Locally
 
-In the project directory, you can run:
+**Prerequisites:**
 
-### `npm start`
+- Node.js (includes npm) installed on your machine (LTS version recommended).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Steps:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1.  **Clone the Repository:**
 
-### `npm test`
+    ```bash
+    git clone https://github.com/ronaldo-28/album
+    cd react-albums-app
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.  **Install Dependencies:**
+    Navigate into the project directory and install the required npm packages.
 
-### `npm run build`
+    ```bash
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3.  **Start the Development Server:**
+    Run the start script defined in `package.json`.
+    ```bash
+    npm start
+    ```
+    This will typically launch the application in your default web browser, usually at `http://localhost:3000`. The app will automatically reload if you make changes to the code.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How Theming Works
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The application uses CSS variables defined in `src/index.css`.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Variables for the default (light) theme are set in the `:root` selector.
+- Overrides for the dark theme are defined within the `body.dark` selector.
+- The `App` component manages a `theme` state ('light' or 'dark').
+- When the theme state changes (via the toggle button in the `Navbar`), the `App` component adds or removes the `.dark` class from the `<body>` element.
+- CSS automatically applies the correct variable values based on the presence of the `.dark` class.
+- The chosen theme is saved to `localStorage` so it persists across browser sessions.
