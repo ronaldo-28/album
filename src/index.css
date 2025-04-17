@@ -1,150 +1,145 @@
-/* index.css */
+/* index.css - Refreshed Theme: Deep Teal & Gold */
 
 /* ----------------------------------------- */
 /* THEME COLOR VARIABLES                     */
 /* ----------------------------------------- */
 
-/* Define CSS variables for colors in the default (light) theme */
+/* Define CSS variables for the default (light) theme */
 :root {
   /* Base colors */
-  --bg-color: #f2f2f2; /* Page background */
-  --text-color: #333; /* Default text color */
+  --bg-color: #f8f9fa; /* Very light off-white */
+  --text-color: #003c43; /* Dark Teal/Blue-Green */
 
   /* Navbar specific colors */
-  --navbar-bg: #000000; /* Navbar background */
-  --navbar-brand-bg: #fd0102; /* Background for the first part of the brand */
-  --navbar-brand-text: white; /* Text color for the first part of the brand */
-  --navbar-brand-half-bg: #000000; /* Background for the second part of the brand */
-  --navbar-brand-half-text: #fd0102; /* Text color for the second part of the brand */
-  --navbar-button-text: #fd0102; /* Text color for the navigation button */
-  --navbar-button-border: #fd0102; /* Border color for the navigation button */
-  --navbar-button-hover-bg: #fd0102; /* Background color on hover for the navigation button */
-  --navbar-button-hover-text: white; /* Text color on hover for the navigation button */
+  --navbar-bg: #003c43; /* Dark Teal */
+  --navbar-brand-text: #ffffff; /* White */
+  --navbar-brand-bg: #ffc107; /* Gold/Amber accent */
+  --navbar-brand-half-bg: #003c43; /* Dark Teal */
+  --navbar-brand-half-text: #ffc107; /* Gold/Amber accent */
+  --navbar-button-text: #ffc107; /* Gold/Amber accent */
+  --navbar-button-border: #ffc107; /* Gold/Amber accent */
+  --navbar-button-hover-bg: #ffc107; /* Gold/Amber accent */
+  --navbar-button-hover-text: #003c43; /* Dark Teal */
 
   /* Theme Toggle Button colors */
-  --theme-toggle-outline: #bbb; /* Border/outline color for the toggle button */
-  --theme-toggle-text: #555; /* Text color for the toggle button */
-  --theme-toggle-hover-bg: #eee; /* Background color on hover for the toggle button */
+  --theme-toggle-outline: #ced4da; /* Light Grey */
+  --theme-toggle-text: #495057; /* Dark Grey */
+  --theme-toggle-hover-bg: #e9ecef; /* Slightly darker off-white */
 
   /* Album List Item ('List' component) colors */
-  --list-bg: #478ac9; /* Background for album items */
-  --list-text: white; /* Text color inside album items */
-  --list-button-update-bg: black; /* Background for the 'Update' button */
-  --list-button-update-text: white; /* Text color for the 'Update' button */
-  --list-button-update-hover-bg: #333; /* Background on hover for the 'Update' button */
-  --list-button-delete-bg: #fd0102; /* Background for the 'Delete' button */
-  --list-button-delete-text: white; /* Text color for the 'Delete' button */
-  --list-button-delete-hover-bg: #c80002; /* Background on hover for the 'Delete' button */
+  --list-bg: #e0f2f7; /* Very Light Cyan/Teal */
+  --list-text: #003c43; /* Dark Teal */
+  --list-button-update-bg: #005f73; /* Medium Teal */
+  --list-button-update-text: #ffffff; /* White */
+  --list-button-update-hover-bg: #004f5f; /* Darker Medium Teal */
+  --list-button-delete-bg: #ae2012; /* Muted dark red */
+  --list-button-delete-text: #ffffff; /* White */
+  --list-button-delete-hover-bg: #9b2226; /* Darker muted red */
 
   /* Form ('AddAlbum', 'UpdateAlbum') colors */
-  --form-bg: #478ac9; /* Background for form containers */
-  --form-text: white; /* Text color inside forms (labels, etc.) */
-  --form-input-bg: white; /* Background for input fields */
-  --form-input-text: #333; /* Text color inside input fields */
-  --form-button-bg: #28a745; /* Background for form submit buttons */
-  --form-button-text: white; /* Text color for form submit buttons */
-  --form-button-hover-bg: #218838; /* Background on hover for form submit buttons */
-  --form-heading-text: #333; /* Text color for form page headings (like 'Add New Album') */
+  --form-bg: #e0f2f7; /* Very Light Cyan/Teal */
+  --form-text: #003c43; /* Dark Teal */
+  --form-input-bg: #ffffff; /* White */
+  --form-input-text: #003c43; /* Dark Teal */
+  --form-button-bg: #ffc107; /* Gold/Amber accent */
+  --form-button-text: #003c43; /* Dark Teal */
+  --form-button-hover-bg: #e0a800; /* Darker Gold/Amber */
+  --form-heading-text: #003c43; /* Dark Teal */
 }
 
 /* Define overrides for the dark theme when body has 'dark' class */
 body.dark {
   /* Base colors */
-  --bg-color: #212529;
-  --text-color: #f8f9fa;
+  --bg-color: #1a2a30; /* Very Dark Slate Blue/Teal */
+  --text-color: #e0f2f7; /* Light Cyan/Teal */
 
   /* Navbar specific colors */
-  --navbar-bg: #1a1a1a;
-  --navbar-brand-bg: #e60000;
-  --navbar-brand-text: #f8f9fa;
-  --navbar-brand-half-bg: #1a1a1a;
-  --navbar-brand-half-text: #e60000;
-  --navbar-button-text: #e60000;
-  --navbar-button-border: #e60000;
-  --navbar-button-hover-bg: #e60000;
-  --navbar-button-hover-text: #f8f9fa;
+  --navbar-bg: #00272e; /* Almost Black Teal */
+  --navbar-brand-text: #ffffff; /* White */
+  --navbar-brand-bg: #ffc107; /* Gold/Amber accent */
+  --navbar-brand-half-bg: #00272e; /* Almost Black Teal */
+  --navbar-brand-half-text: #ffc107; /* Gold/Amber accent */
+  --navbar-button-text: #ffc107; /* Gold/Amber accent */
+  --navbar-button-border: #ffc107; /* Gold/Amber accent */
+  --navbar-button-hover-bg: #ffc107; /* Gold/Amber accent */
+  --navbar-button-hover-text: #00272e; /* Almost Black Teal */
 
   /* Theme Toggle Button colors */
-  --theme-toggle-outline: #555;
-  --theme-toggle-text: #aaa;
-  --theme-toggle-hover-bg: #333;
+  --theme-toggle-outline: #495057; /* Dark Grey */
+  --theme-toggle-text: #adb5bd; /* Light Grey */
+  --theme-toggle-hover-bg: #343a40; /* Darker Grey */
 
   /* Album List Item colors */
-  --list-bg: #3a70a1;
-  --list-text: #f8f9fa;
-  --list-button-update-bg: #555;
-  --list-button-update-text: #f8f9fa;
-  --list-button-update-hover-bg: #777;
-  --list-button-delete-bg: #e60000;
-  --list-button-delete-text: #f8f9fa;
-  --list-button-delete-hover-bg: #ff1a1a;
+  --list-bg: #004f5f; /* Darker Medium Teal */
+  --list-text: #e0f2f7; /* Light Cyan/Teal */
+  --list-button-update-bg: #007f8f; /* Brighter Teal */
+  --list-button-update-text: #ffffff; /* White */
+  --list-button-update-hover-bg: #009fb3; /* Even Brighter Teal */
+  --list-button-delete-bg: #ca6702; /* Burnt Orange/Brown */
+  --list-button-delete-text: #ffffff; /* White */
+  --list-button-delete-hover-bg: #bb3e03; /* Darker Burnt Orange */
 
   /* Form colors */
-  --form-bg: #3a70a1;
-  --form-text: #f8f9fa;
-  --form-input-bg: #495057;
-  --form-input-text: #f8f9fa;
-  --form-button-bg: #1e7e34;
-  --form-button-text: #f8f9fa;
-  --form-button-hover-bg: #155724;
-  --form-heading-text: #f8f9fa; /* Light text for heading in dark mode */
+  --form-bg: #004f5f; /* Darker Medium Teal */
+  --form-text: #e0f2f7; /* Light Cyan/Teal */
+  --form-input-bg: #344c54; /* Dark Slate */
+  --form-input-text: #e0f2f7; /* Light Cyan/Teal */
+  --form-button-bg: #ffc107; /* Gold/Amber accent */
+  --form-button-text: #003c43; /* Dark Teal */
+  --form-button-hover-bg: #e0a800; /* Darker Gold/Amber */
+  --form-heading-text: #e0f2f7; /* Light Cyan/Teal */
 }
 
 /* ----------------------------------------- */
 /* GLOBAL STYLES & RESETS                    */
 /* ----------------------------------------- */
 
-/* Universal selector (*) applies these styles to ALL elements */
 * {
-  margin: 0px; /* Remove default browser margins */
-  padding: 0px; /* Remove default browser padding */
-  box-sizing: border-box; /* Include padding and border in element's total width/height */
-  font-family: Arial, Helvetica, sans-serif; /* Default font stack */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Changed font stack slightly */
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-/* Styles applied to the <body> element */
 body {
-  width: 100%; /* Full viewport width */
-  min-height: 100vh; /* At least full viewport height */
-  background-color: var(--bg-color); /* Use theme variable for background */
-  color: var(--text-color); /* Use theme variable for default text */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  /* Slightly faster transition */
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Styles applied to anchor (<a>) tags */
 a {
-  color: unset; /* Inherit color from parent */
-  text-decoration: none; /* Remove underline */
+  color: inherit; /* Changed from unset for clarity */
+  text-decoration: none;
 }
 
-/* Styles applied to input fields */
 input {
-  outline: none; /* Remove default focus outline */
-  font-size: 18px; /* Base font size */
-  width: 100%; /* Full width of container */
-  background-color: var(--form-input-bg); /* Use theme variable */
-  color: var(--form-input-text); /* Use theme variable */
-  border: 1px solid var(--list-bg); /* Subtle border, color related to list background */
-  padding: 8px; /* Internal spacing */
-  border-radius: 4px; /* Rounded corners */
+  outline: none;
+  font-size: 1rem; /* Adjusted size */
+  width: 100%;
+  background-color: var(--form-input-bg);
+  color: var(--form-input-text);
+  /* Slightly different border color source */
+  border: 1px solid var(--theme-toggle-outline);
+  padding: 10px; /* Adjusted padding */
+  border-radius: 6px; /* Slightly more rounded */
 }
 input:focus {
-  border-color: var(
-    --form-button-bg
-  ); /* Highlight focus using form button color */
-  /* Subtle focus glow using form button color with transparency */
-  box-shadow: 0 0 0 2px rgba(var(--form-button-bg), 0.25);
+  border-color: var(--form-button-bg); /* Use theme variable for focus */
+  box-shadow: 0 0 0 3px rgba(var(--form-button-bg), 0.2); /* Adjusted focus shadow */
 }
 
-/* Styles applied to button elements */
 button {
-  outline: none; /* Remove default focus outline */
-  border: none; /* Remove default border */
-  cursor: pointer; /* Indicate interactivity */
-  border-radius: 4px; /* Base rounded corners */
-  /* Base transitions for smooth hover effects */
-  transition: background-color 0.2s ease, color 0.2s ease,
-    border-color 0.2s ease;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px; /* Slightly more rounded */
+  /* Slightly different transition timing */
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 /* ----------------------------------------- */
@@ -153,66 +148,66 @@ button {
 
 .navbar {
   width: 100%;
-  padding: 15px 15px; /* Symmetrical padding */
-  background-color: var(--navbar-bg); /* Use theme variable */
-  display: flex; /* Enable Flexbox */
-  justify-content: space-between; /* Space out logo, toggle, nav link */
-  align-items: center; /* Vertically align items */
-  position: fixed; /* Fix to viewport */
-  top: 0; /* Align to top */
-  left: 0; /* Align to left */
-  z-index: 1000; /* Ensure it's above most other content */
-  box-sizing: border-box; /* Include padding in width calculation */
+  padding: 12px 20px; /* Adjusted padding */
+  background-color: var(--navbar-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border in dark mode */
 }
 
-/* Navbar Brand/Logo styling */
+/* Navbar Brand styling - Adjusted colors */
 .navbar h2 {
-  background-color: var(--navbar-brand-bg); /* Use theme variable */
-  width: fit-content; /* Size to content */
-  padding: 4px 6px;
-  color: var(--navbar-brand-text); /* Use theme variable */
-  border-radius: 3px;
-  cursor: default; /* Default cursor as it's likely not interactive */
+  background-color: var(--navbar-brand-bg);
+  width: fit-content;
+  padding: 5px 8px; /* Adjusted padding */
+  color: var(--navbar-brand-text);
+  border-radius: 4px; /* Slightly less rounded */
+  cursor: default;
+  font-weight: bold; /* Added bold */
+  font-size: 1.1rem; /* Adjusted size */
 }
 .brand-first-half {
-  margin-right: 2px; /* Small space between brand parts */
+  margin-right: 1px; /* Reduced space */
 }
 .brand-last-half {
-  background-color: var(--navbar-brand-half-bg); /* Use theme variable */
-  color: var(--navbar-brand-half-text); /* Use theme variable */
-  padding: 0 4px;
+  background-color: var(--navbar-brand-half-bg);
+  color: var(--navbar-brand-half-text);
+  padding: 0 5px; /* Adjusted padding */
 }
 
-/* Styles for the Navigation Link's Button (e.g., "Add Album" or "Home") */
+/* Navbar Navigation Button */
 .navbar > a > button {
-  background-color: transparent; /* No background */
-  color: var(--navbar-button-text); /* Use theme variable */
-  border: 2px solid var(--navbar-button-border); /* Use theme variable */
-  padding: 5px 10px;
+  background-color: transparent;
+  color: var(--navbar-button-text);
+  border: 1px solid var(--navbar-button-border); /* Thinner border */
+  padding: 6px 12px; /* Adjusted padding */
   cursor: pointer;
-  font-size: 1rem;
-  border-radius: 4px;
-  /* Base transition inherited */
+  font-size: 0.95rem; /* Adjusted size */
+  border-radius: 6px; /* Match button rounding */
 }
 .navbar > a > button:hover {
-  background-color: var(--navbar-button-hover-bg); /* Use theme variable */
-  color: var(--navbar-button-hover-text); /* Use theme variable */
+  background-color: var(--navbar-button-hover-bg);
+  color: var(--navbar-button-hover-text);
 }
 
-/* Styles for the centered theme toggle button */
+/* Navbar Theme Toggle Button */
 .theme-toggle-button-center {
-  padding: 5px 10px;
+  padding: 6px 12px; /* Adjusted padding */
   font-size: 0.9rem;
-  border-radius: 4px;
-  background-color: transparent; /* No background */
-  /* Use theme variables for border and text */
+  border-radius: 6px; /* Match button rounding */
+  background-color: transparent;
   border: 1px solid var(--theme-toggle-outline);
   color: var(--theme-toggle-text);
-  margin: 0 10px; /* Add horizontal margin for spacing */
-  /* Base transition inherited */
+  margin: 0 15px; /* Adjusted margin */
 }
 .theme-toggle-button-center:hover {
-  background-color: var(--theme-toggle-hover-bg); /* Use theme variable */
+  background-color: var(--theme-toggle-hover-bg);
 }
 
 /* ----------------------------------------- */
@@ -220,16 +215,16 @@ button {
 /* ----------------------------------------- */
 
 .albums-list {
-  width: 85%; /* Responsive width */
-  max-width: 1200px; /* Maximum width */
-  margin: auto; /* Center horizontally */
-  /* Top padding to clear the fixed navbar */
-  padding-top: 75px; /* Adjust value based on actual navbar height */
-  display: flex; /* Enable Flexbox */
-  flex-wrap: wrap; /* Allow items to wrap to next line */
-  justify-content: center; /* Center items horizontally */
-  gap: 20px; /* Spacing between items */
-  padding-bottom: 30px; /* Space at the bottom */
+  width: 90%; /* Slightly wider */
+  max-width: 1300px; /* Allow wider max */
+  margin: auto;
+  /* Increased padding slightly */
+  padding-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px; /* Increased gap */
+  padding-bottom: 40px;
 }
 
 /* ----------------------------------------- */
@@ -237,123 +232,122 @@ button {
 /* ----------------------------------------- */
 
 .list {
-  width: 100%; /* Full width on small screens */
-  max-width: 320px; /* Max width for larger screens */
-  min-height: 180px; /* Minimum height */
-  height: auto; /* Height based on content */
-  background-color: var(--list-bg); /* Use theme variable */
-  color: var(--list-text); /* Use theme variable */
-  padding: 15px; /* Internal spacing */
-  display: flex; /* Enable Flexbox */
-  flex-direction: column; /* Stack title and buttons vertically */
-  justify-content: space-between; /* Push title up, buttons down */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  width: 100%;
+  max-width: 300px; /* Slightly smaller max-width */
+  min-height: 170px; /* Adjusted min-height */
+  height: auto;
+  background-color: var(--list-bg);
+  color: var(--list-text);
+  padding: 20px; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 6px; /* Match button rounding */
+  /* Softer shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
 }
 
 /* Album Title */
 .list h3 {
-  text-align: center;
-  text-transform: capitalize; /* Capitalize first letter of words */
-  margin-bottom: 15px; /* Space below title */
-  font-size: 1.1rem; /* Title font size */
-  word-break: break-word; /* Prevent long titles from overflowing */
+  text-align: left; /* Align title left */
+  text-transform: capitalize;
+  margin-bottom: 20px; /* Increased margin */
+  font-size: 1.05rem; /* Slightly adjusted size */
+  word-break: break-word;
+  font-weight: 600; /* Semibold */
+  line-height: 1.4; /* Improved line spacing */
 }
 
-/* Container for Update/Delete buttons */
+/* Button Group */
 .button-group {
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Space buttons apart */
-  gap: 10px; /* Space between buttons */
+  justify-content: space-between;
+  gap: 12px; /* Increased gap */
 }
 
 /* Update Button */
 .update-btn {
-  background-color: var(--list-button-update-bg); /* Use theme variable */
-  color: var(--list-button-update-text); /* Use theme variable */
-  padding: 10px 15px;
-  flex-grow: 1; /* Allow button to grow to fill space */
-  /* Base transitions and radius inherited */
+  background-color: var(--list-button-update-bg);
+  color: var(--list-button-update-text);
+  padding: 8px 12px; /* Adjusted padding */
+  flex-grow: 1;
+  font-size: 0.9rem; /* Smaller text */
 }
 .update-btn:hover {
-  background-color: var(--list-button-update-hover-bg); /* Use theme variable */
+  background-color: var(--list-button-update-hover-bg);
 }
 
 /* Delete Button */
 .delete-btn {
-  background-color: var(--list-button-delete-bg); /* Use theme variable */
-  color: var(--list-button-delete-text); /* Use theme variable */
-  padding: 10px 15px;
-  flex-grow: 1; /* Allow button to grow to fill space */
-  /* Base transitions and radius inherited */
+  background-color: var(--list-button-delete-bg);
+  color: var(--list-button-delete-text);
+  padding: 8px 12px; /* Adjusted padding */
+  flex-grow: 1;
+  font-size: 0.9rem; /* Smaller text */
 }
 .delete-btn:hover {
-  background-color: var(--list-button-delete-hover-bg); /* Use theme variable */
-  color: var(--list-button-delete-text); /* Keep text color same on hover */
+  background-color: var(--list-button-delete-hover-bg);
+  color: var(--list-button-delete-text);
 }
 
 /* ----------------------------------------- */
 /* FORM PAGES (AddAlbum, UpdateAlbum)        */
 /* ----------------------------------------- */
 
-/* Common container for the form page content area */
 .update-album,
 .addalbum-container {
-  width: 90%; /* Responsive width */
-  max-width: 450px; /* Max width for the form area */
-  margin: auto; /* Center horizontally */
-  /* Top padding to clear the fixed navbar */
-  padding-top: 85px; /* Adjust value based on actual navbar height */
-  padding-bottom: 30px; /* Space at the bottom */
+  width: 90%;
+  max-width: 400px; /* Smaller max width for forms */
+  margin: auto;
+  padding-top: 90px; /* Slightly more padding */
+  padding-bottom: 40px;
 }
 
-/* Heading for the form pages (e.g., "Add New Album") */
 .form-heading {
   text-align: center;
-  color: var(--form-heading-text); /* Use theme variable */
-  margin-bottom: 25px; /* Space below heading */
-  font-size: 1.8rem; /* Heading size */
+  color: var(--form-heading-text);
+  margin-bottom: 30px; /* Increased margin */
+  font-size: 1.6rem; /* Slightly smaller heading */
+  font-weight: 600;
 }
 
-/* The actual form container */
 .form-container,
 .addalbum-form {
-  background-color: var(--form-bg); /* Use theme variable */
-  padding: 25px; /* Internal spacing */
-  margin-top: 0; /* Remove top margin if heading is outside */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  color: var(--form-text); /* Use theme variable for labels etc. */
+  background-color: var(--form-bg);
+  padding: 30px; /* Increased padding */
+  margin-top: 0;
+  border-radius: 6px; /* Match button rounding */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Slightly different shadow */
+  color: var(--form-text);
 }
 
-/* Container for each label-input pair */
 .inp-container {
-  margin-bottom: 20px; /* Space between input groups */
+  margin-bottom: 25px; /* Increased margin */
 }
 
-/* Label styling */
 .inp-container label {
-  display: block; /* Ensure label is on its own line */
-  margin-bottom: 8px; /* Space between label and input */
-  font-weight: bold;
-  font-size: 0.95rem;
-  color: var(--form-text); /* Use theme variable */
+  display: block;
+  margin-bottom: 6px; /* Reduced margin */
+  font-weight: normal; /* Normal weight */
+  font-size: 0.9rem; /* Smaller label */
+  color: var(--form-text);
 }
 
-/* Form submit button styling */
+/* Form submit button */
 .form-container button,
 .addalbum-form button {
-  background-color: var(--form-button-bg); /* Use theme variable */
-  padding: 12px 20px; /* Button size */
-  color: var(--form-button-text); /* Use theme variable */
-  width: 100%; /* Full width button */
-  margin-top: 15px; /* Space above button */
-  font-size: 1.1rem; /* Text size */
-  border-radius: 4px;
-  /* Base transitions inherited */
+  background-color: var(--form-button-bg);
+  padding: 10px 18px; /* Adjusted padding */
+  color: var(--form-button-text);
+  width: 100%;
+  margin-top: 10px; /* Reduced margin */
+  font-size: 1rem; /* Adjusted size */
+  font-weight: bold; /* Bold text */
+  border-radius: 6px; /* Match button rounding */
 }
 .form-container button:hover,
 .addalbum-form button:hover {
-  background-color: var(--form-button-hover-bg); /* Use theme variable */
+  background-color: var(--form-button-hover-bg);
 }
